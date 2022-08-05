@@ -13,18 +13,18 @@ app.get("/", function (req, res) {
 
 app.post("/", function (req, res) {
 
-    const FirstName = req.body.FirstName;
-    const LastName = req.body.LastName;
-    const email = req.body.Mail;
+    // const FirstName = req.body.FirstName;
+    // const LastName = req.body.LastName;
+    // const email = req.body.Mail;
 
     const data = {
        members: [
         {
-            email_address: email,
+            email_address: req.body.Mail,
             status: "subscribed",
             merge_fields: {
-                FNAME: FirstName,
-                LNAME: LastName,
+                FNAME: req.body.FirstName,
+                LNAME: req.body.LastName,
             }
         }
        ]
