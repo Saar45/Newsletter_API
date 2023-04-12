@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
@@ -33,7 +34,7 @@ app.post("/", function (req, res) {
     const options = {
 
         method: "POST",
-        auth: "naby2:08f93e68cbc070215871b3d68f196775-us17"
+        auth: process.env.MYKey
     };
 
    const request = https.request(url, options, function (response) {
